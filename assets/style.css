@@ -388,12 +388,13 @@ figcaption {
 /* ── Footer ── */
 footer {
   border-top: 1px solid #141414;
-  padding: 40px 28px 28px;
+  padding: 40px 0 28px;
 }
 
 .footer-inner {
   max-width: 728px;
   margin: 0 auto;
+  padding: 0 28px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
