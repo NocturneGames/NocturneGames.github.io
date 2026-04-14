@@ -422,6 +422,17 @@ footer {
   font-size: 0.9rem;
   font-weight: 700;
   color: #fdfbf5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
 }
 
 .footer-links {
