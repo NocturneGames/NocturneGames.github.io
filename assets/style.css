@@ -558,12 +558,77 @@ footer {
 }
 
 /* ── CEO contact block ── */
+/* ── Apply CTA block ── */
+.apply-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background-color: #fdfbf5;
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin: 8px 0 16px;
+  flex-wrap: wrap;
+}
+
+.apply-cta-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 6px;
+}
+
+.apply-cta-title {
+  color: #0a0a0a;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.apply-cta-desc {
+  color: #555;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 340px;
+}
+
+.apply-cta-btn {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+}
+
+/* ── CEO card ── */
 .ceo-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
   background-color: #0f0f0f;
   border: 1px solid #1c1c1c;
   border-radius: 12px;
-  padding: 24px;
-  margin-top: 8px;
+  padding: 22px 24px;
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+
+.ceo-card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  padding-right: 28px;
+  border-right: 1px solid #1c1c1c;
+}
+
+.ceo-card-right {
+  flex: 1;
+  min-width: 200px;
 }
 
 .ceo-label {
@@ -573,7 +638,7 @@ footer {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-family: 'Space Grotesk', sans-serif;
-  margin: 0 0 16px;
+  margin: 0 0 6px;
 }
 
 .ceo-identity {
