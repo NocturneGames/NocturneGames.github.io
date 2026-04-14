@@ -558,51 +558,63 @@ footer {
 }
 
 /* ── CEO contact block ── */
-.ceo-block {
+.ceo-card {
+  background-color: #0f0f0f;
+  border: 1px solid #1c1c1c;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.ceo-label {
+  color: #555;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 16px;
+}
+
+.ceo-identity {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 28px 0;
-  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 .ceo-photo {
-  width: 72px;
-  height: 72px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
-.ceo-label {
-  color: #555;
-  font-size: 0.78rem;
+.ceo-name {
+  color: #fdfbf5;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   font-family: 'Space Grotesk', sans-serif;
-  margin: 0 0 4px;
+  margin-bottom: 2px;
 }
 
-.ceo-title {
-  color: #fdfbf5;
-  font-size: 1.1rem;
-  font-weight: 700;
+.ceo-role {
+  color: #555;
+  font-size: 0.8rem;
   font-family: 'Space Grotesk', sans-serif;
-  margin: 0 0 6px;
 }
 
 .ceo-desc {
   color: #777;
   font-size: 0.85rem;
-  margin: 0;
+  margin: 0 0 20px;
 }
 
-.ceo-links {
+.ceo-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 14px;
+  gap: 20px;
 }
 
 .ceo-linkedin {
