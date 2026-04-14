@@ -2,7 +2,7 @@
 (function () {
   var links = [
     { href: '/',           label: 'Studio' },
-    { href: '/batch-w25/', label: 'Community' },
+    { href: '/publishing/', label: 'Publishing' },
     { href: '/blog/',      label: 'Blog' },
   ];
 
