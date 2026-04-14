@@ -84,6 +84,17 @@
 
     <form id="apply-form">
 
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fullName">Full name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your name" required/>
+        </div>
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+        </div>
+      </div>
+
       <div class="form-field">
         <label for="appLink">App Store or Play Store link *</label>
         <input type="url" id="appLink" name="appLink" placeholder="https://apps.apple.com/app/..." required/>
@@ -130,6 +141,8 @@
       errEl.style.display = "none";
 
       var payload = {
+        fullName: document.getElementById("fullName").value.trim(),
+        email: document.getElementById("email").value.trim(),
         appLink: document.getElementById("appLink").value.trim(),
         about: document.getElementById("about").value.trim(),
         howHeard: document.getElementById("howHeard").value.trim(),
