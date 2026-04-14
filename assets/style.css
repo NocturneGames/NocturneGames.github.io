@@ -693,3 +693,13 @@ footer {
 }
 
 .ceo-linkedin:hover { color: #aaa; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .form-row { grid-template-columns: 1fr; }
+}
