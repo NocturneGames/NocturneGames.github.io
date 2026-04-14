@@ -16,7 +16,17 @@
 
   var brand = document.createElement('div');
   brand.className = 'footer-brand';
-  brand.textContent = 'Nocturne Games';
+
+  var logoImg = document.createElement('img');
+  logoImg.src = '/assets/logo.png';
+  logoImg.alt = 'Nocturne Games';
+  logoImg.className = 'footer-logo';
+  brand.appendChild(logoImg);
+
+  var brandName = document.createElement('span');
+  brandName.textContent = 'Nocturne Games';
+  brand.appendChild(brandName);
+
   inner.appendChild(brand);
 
   var linksDiv = document.createElement('div');
