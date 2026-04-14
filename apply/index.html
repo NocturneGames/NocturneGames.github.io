@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Apply — Nocturne Publishing</title>
+  <meta name="robots" content="noindex"/>
+  <link rel="stylesheet" href="/assets/style.css"/>
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any"/>
+  <style>
+    .form-field { margin-bottom: 22px; }
+    .form-field label {
+      display: block;
+      color: #aaa;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+    .form-field .field-hint {
+      color: #555;
+      font-size: 0.78rem;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      background-color: #0f0f0f;
+      border: 1px solid #1c1c1c;
+      border-radius: 8px;
+      color: #fdfbf5;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus { border-color: #3a3a3a; }
+    .form-field textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #333; }
+    .form-submit { margin-top: 28px; }
+    #form-success {
+      display: none;
+      background-color: #0f0f0f;
+      border: 1px solid #1c1c1c;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    #form-success p { color: #777; font-size: 0.9rem; margin-top: 8px; }
+    #form-error {
+      display: none;
+      color: #e07070;
+      font-size: 0.82rem;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <script src="/assets/nav.js"></script>
+  <div class="container">
+
+    <div style="padding-top: 16px; margin-bottom: 32px;">
+      <a href="/indie-publishing/" style="color:#555; font-size:0.82rem; font-family:'Space Grotesk',sans-serif;">← Back</a>
+    </div>
+
+    <h1 style="font-size:1.6rem; margin-bottom:8px;">Apply to the program</h1>
+    <p style="color:#777; margin-bottom:36px;">Sharp and short. We mostly want to see your app.</p>
+
+    <div id="form-success">
+      <div style="font-size:1.5rem; margin-bottom:12px;">✓</div>
+      <strong style="color:#fdfbf5; font-family:'Space Grotesk',sans-serif;">Application received.</strong>
+      <p>We'll review it and get back to you within a few days.</p>
+    </div>
+
+    <form id="apply-form">
+
+      <div class="form-field">
+        <label for="appLink">App Store or Play Store link *</label>
+        <input type="url" id="appLink" name="appLink" placeholder="https://apps.apple.com/app/..." required/>
+      </div>
+
+      <div class="form-field">
+        <label for="about">Tell us about yourself</label>
+        <span class="field-hint">Who are you, what's the app, where are you at with it?</span>
+        <textarea id="about" name="about" placeholder="A few lines is enough."></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="howHeard">How did you hear about Nocturne?</label>
+        <input type="text" id="howHeard" name="howHeard" placeholder="Twitter, a friend, the blog..."/>
+      </div>
+
+      <div class="form-field">
+        <label for="publisher">Have you worked with a publisher before?</label>
+        <span class="field-hint">On this app or another one.</span>
+        <input type="text" id="publisher" name="publisher" placeholder="Yes / No — and if yes, briefly what happened"/>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn" id="submit-btn">Send application →</button>
+        <div id="form-error">Something went wrong. Try again or email contact@nocturne.build.</div>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script src="/assets/footer.js"></script>
+
+  <script>
+    // WORKER_URL will be replaced once the Cloudflare Worker is deployed
+    var WORKER_URL = "WORKER_URL_PLACEHOLDER";
+
+    document.getElementById("apply-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById("submit-btn");
+      var errEl = document.getElementById("form-error");
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+      errEl.style.display = "none";
+
+      var payload = {
+        appLink: document.getElementById("appLink").value.trim(),
+        about: document.getElementById("about").value.trim(),
+        howHeard: document.getElementById("howHeard").value.trim(),
+        publisher: document.getElementById("publisher").value.trim(),
+      };
+
+      try {
+        var res = await fetch(WORKER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        var data = await res.json();
+        if (data.ok) {
+          document.getElementById("apply-form").style.display = "none";
+          document.getElementById("form-success").style.display = "block";
+        } else {
+          throw new Error(data.error || "Unknown error");
+        }
+      } catch(err) {
+        errEl.style.display = "block";
+        btn.textContent = "Send application →";
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
