@@ -628,11 +628,23 @@ footer {
   align-items: center;
   gap: 14px;
   margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 .ceo-btn {
   margin-left: auto;
   flex-shrink: 0;
+}
+
+@media (max-width: 520px) {
+  .ceo-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .apply-cta { flex-direction: column; align-items: flex-start; }
+  .apply-cta-btn { width: 100%; text-align: center; }
 }
 
 .ceo-photo {
