@@ -627,7 +627,12 @@ footer {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 14px;
+  margin-top: 16px;
+}
+
+.ceo-btn {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .ceo-photo {
@@ -644,7 +649,13 @@ footer {
   font-weight: 700;
   font-family: 'Space Grotesk', sans-serif;
   margin-bottom: 2px;
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: #333;
+  text-underline-offset: 2px;
 }
+
+.ceo-name:hover { text-decoration-color: #888; }
 
 .ceo-role {
   color: #555;
@@ -655,7 +666,7 @@ footer {
 .ceo-desc {
   color: #777;
   font-size: 0.85rem;
-  margin: 0 0 20px;
+  margin: 4px 0 0;
 }
 
 .ceo-actions {
