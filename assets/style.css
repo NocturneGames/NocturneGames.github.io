@@ -159,8 +159,11 @@ hr.delimiter {
 .app-card:hover { border-color: #2e2e2e; background-color: #141414; }
 
 .app-icon {
-  font-size: 28px;
-  line-height: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  object-fit: cover;
+  display: block;
   margin-bottom: 14px;
 }
 
