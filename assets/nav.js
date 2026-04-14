@@ -2,7 +2,7 @@
 (function () {
   var links = [
     { href: '/',           label: 'Studio' },
-    { href: '/publishing/', label: 'Publishing' },
+    { href: '/indie-publishing/', label: 'Publishing' },
     { href: '/blog/',      label: 'Blog' },
   ];
 
