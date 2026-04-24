@@ -1,11 +1,10 @@
 /* Shared footer — auto-inserts on all pages */
 (function () {
   var links = [
-    { href: '/',                  label: 'Studio' },
-    { href: '/blog/',             label: 'Blog' },
-    { href: '/indie-publishing/', label: 'Publishing' },
-    { href: '/terms/',            label: 'Terms &amp; Conditions' },
-    { href: '/privacy/',          label: 'Privacy Policy' },
+    { href: '/',       label: 'Studio' },
+    { href: '/blog/',  label: 'Blog' },
+    { href: '/terms/', label: 'Terms &amp; Conditions' },
+    { href: '/privacy/', label: 'Privacy Policy' },
     { href: 'mailto:contact@nocturne.build', label: 'Contact' },
   ];
 
