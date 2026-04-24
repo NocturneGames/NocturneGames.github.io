@@ -1,9 +1,8 @@
 /* Shared nav — auto-inserts and sets active state based on current path */
 (function () {
   var links = [
-    { href: '/',           label: 'Studio' },
-    { href: '/indie-publishing/', label: 'Publishing' },
-    { href: '/blog/',      label: 'Blog' },
+    { href: '/',      label: 'Studio' },
+    { href: '/blog/', label: 'Blog' },
   ];
 
   var path = window.location.pathname;
