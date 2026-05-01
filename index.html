@@ -17,6 +17,22 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/favicon-180x180.png"/>
   <link rel="manifest" href="/assets/favicon/site.webmanifest"/>
+  <style>
+    .app-card-single {
+      display: block;
+      background-color: #101010;
+      border: 1px solid #1c1c1c;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 28px;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .app-card-single:hover { border-color: #2e2e2e; background-color: #141414; }
+    .app-card-single .app-icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 20px; }
+    .app-card-single .app-name { font-size: 1.3rem; margin-bottom: 10px; }
+    .app-card-single .app-desc { font-size: 0.92rem; line-height: 1.7; color: #888; margin-bottom: 20px; }
+    .app-card-single .app-badge { font-size: 0.8rem; color: #666; }
+  </style>
 </head>
 <body>
   <script src="/assets/nav.js"></script>
@@ -41,45 +57,43 @@
 
     <h2>Our game</h2>
 
-    <div class="apps-grid" style="grid-template-columns: 1fr; max-width: 480px;">
-
-      <a class="app-card" href="https://apps.apple.com/us/app/plug-build-your-empire-irl/id6761916606" target="_blank" rel="noopener">
-        <img class="app-icon" src="/assets/images/icon-plug.jpg" alt="Plug icon"/>
-        <div class="app-name">Plug</div>
-        <div class="app-desc">
-          A real-time management game set in your actual city. Build a supply chain, recruit a crew, manage your operations across a live map of real streets and real neighborhoods.
-          Deep economy, real consequences, no hand-holding. The game your city deserves.
-        </div>
-        <div class="app-badge">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          Download on the App Store
-        </div>
-      </a>
-
-    </div>
+    <a class="app-card-single" href="https://apps.apple.com/us/app/plug-build-your-empire-irl/id6761916606" target="_blank" rel="noopener">
+      <img class="app-icon" src="/assets/images/icon-plug.jpg" alt="Plug icon"/>
+      <div class="app-name" style="color:#fdfbf5;font-weight:700;font-family:'Space Grotesk',sans-serif;">Plug</div>
+      <div class="app-desc">
+        A real-time management game set in your actual city. Build a supply chain, recruit a crew, manage your operations across a live map of real streets and real neighborhoods.
+        Deep economy, real consequences, no hand-holding. The game your city deserves.
+      </div>
+      <div class="app-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download on the App Store
+      </div>
+    </a>
 
     <hr class="delimiter"/>
 
     <h2>From the blog</h2>
 
-    <a href="/blog/paid-acquisition/" class="post-card">
-      <div class="post-card-title">User Acquisition as an Indie Studio</div>
-      <div class="post-card-desc">Campaign setup, creative management, measuring profitability, and monitoring cohorts in real time. The full paid acquisition playbook from a studio running real campaigns with real money.</div>
-      <div class="post-card-meta">
-        <span>March 24, 2026</span>
-        <span>15 min read</span>
-      </div>
-    </a>
+    <div class="post-list">
+      <a href="/blog/paid-acquisition/" class="post-card">
+        <div class="post-card-title">User Acquisition as an Indie Studio</div>
+        <div class="post-card-desc">Campaign setup, creative management, measuring profitability, and monitoring cohorts in real time. The full paid acquisition playbook from a studio running real campaigns with real money.</div>
+        <div class="post-card-meta">
+          <span>March 24, 2026</span>
+          <span>15 min read</span>
+        </div>
+      </a>
 
-    <a href="/blog/batch-w25/" class="post-card">
-      <div class="post-card-tag">Community</div>
-      <div class="post-card-title">Batch W25 — 15 builders, 6 weeks</div>
-      <div class="post-card-desc">In September 2025, we ran our first community program. 15 builders. Every type of project. Here is what they shipped.</div>
-      <div class="post-card-meta">
-        <span>October 2025</span>
-        <span>5 min read</span>
-      </div>
-    </a>
+      <a href="/blog/batch-w25/" class="post-card">
+        <div class="post-card-tag">Community</div>
+        <div class="post-card-title">Batch W25 — 15 builders, 6 weeks</div>
+        <div class="post-card-desc">In September 2025, we ran our first community program. 15 builders. Every type of project. Here is what they shipped.</div>
+        <div class="post-card-meta">
+          <span>October 2025</span>
+          <span>5 min read</span>
+        </div>
+      </a>
+    </div>
 
     <a href="/blog/" class="btn btn-outline" style="margin-top:1.5rem; display:inline-block;">All posts &rarr;</a>
 
